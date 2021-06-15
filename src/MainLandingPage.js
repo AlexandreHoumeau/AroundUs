@@ -29,7 +29,7 @@ const NavLink = tw.a`mt-4 lg:mt-0 transition duration-300 font-medium pb-1 borde
 const PrimaryNavLink = tw(
   NavLink
 )`text-gray-100 bg-primary-500 px-6 py-3 border-none rounded hocus:bg-primary-900 focus:shadow-outline mt-6 md:mt-4 lg:mt-0`;
-const HeroRow = tw(Row)`flex-col lg:flex-row justify-between items-center pt-8 lg:pt-12 pb-16 max-w-screen-2xl mx-auto flex-wrap`;
+const HeroRow = tw(Row)`flex-col lg:flex-row justify-between items-center pt-8 lg:pt-12 pb-16 max-w-screen-2xl mx-auto flex-wrap mt-10`;
 
 const Column = tw.div`flex-1`;
 
@@ -46,9 +46,6 @@ const ActionButton = tw(
   AnchorLink
 )`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 mt-12 inline-block tracking-wide text-center px-10 py-4 font-semibold tracking-normal`;
 const PrimaryButton = tw(ActionButton)``;
-const SecondaryButton = tw(
-  ActionButton
-)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 hocus:text-gray-900`;
 const FeatureList = tw.ul`mt-6 leading-loose flex flex-wrap max-w-xl mx-auto lg:mx-0`;
 const Feature = tw.li`mt-2 flex items-center flex-shrink-0 w-full sm:w-1/2 justify-center lg:justify-start`;
 const FeatureIcon = tw(CheckboxIcon)`w-5 h-5 text-primary-500`;
@@ -90,15 +87,14 @@ const ResizeHandleButton = tw.button`cursor-col-resize focus:outline-none w-4 bo
 export default ({
   features = null,
   primaryButtonUrl = "#landingPageDemos",
-  primaryButtonText = "Explore Demos",
+  primaryButtonText = "Lignes de métro",
   secondaryButtonUrl = "#componentDemos",
-  secondaryButtonText = "View Components",
   buttonRoundedCss = "",
   landingPages = components.landingPages,
   innerPages = components.innerPages,
   blocks = components.blocks,
-  heading = "Free Modern React Templates for every need.",
-  description = "Easily customizable modern React UI Templates and Components built using TailwindCSS which are also lightweight and simple to setup. All components are modular and fully responsive for great mobile experience as well as big desktop screens.  Brand Colors are also fully customizable. Free for personal as well as commercial use."
+  heading = "Ne vous sentez plus jamais seul pendant vos trajets.",
+  description = "Communiquez facilement et rapidement avec des personnes qui partagent vos ligne de métro du quotidien."
 }) => {
   /*
    * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
@@ -122,12 +118,12 @@ export default ({
   const noOfComponentBlocks = Object.values(blocks).reduce((acc, block) => acc + Object.keys(block.elements).length, 0);
 
   features = features || [
-    `${noOfLandingPages} Landing Page Demos`,
-    `${noOfInnerPages} Inner Pages`,
-    `${noOfComponentBlocks} Components`,
-    "Uses TailwindCSS",
-    "Fully Responsive",
-    "Fully Customizable"
+    'Plus de 4 millions de passagers',
+    `De nombreux sujets`,
+    `Tout le monde peut participer`,
+    "Toutes les lignes de métro",
+    "Utilisation de discord",
+    "Et c'est GRATUIT"
   ];
 
   return (
@@ -159,10 +155,6 @@ export default ({
             </div>
           </NavRow>
           <HeroRow>
-            <UpdateNotice>
-              <UpdateNoticeIcon />
-              Last updated on 20th April, 2021 - Added support for React v17 and TailwindCSS v2!
-            </UpdateNotice>
             <TextColumn>
               <Heading as="h1">{heading}</Heading>
               <Description>{description}</Description>
@@ -178,7 +170,6 @@ export default ({
                 <PrimaryButton href={primaryButtonUrl} css={buttonRoundedCss}>
                   {primaryButtonText}
                 </PrimaryButton>
-                <SecondaryButton href={secondaryButtonUrl}>{secondaryButtonText}</SecondaryButton>
               </Actions>
             </TextColumn>
             <ImageColumn>
