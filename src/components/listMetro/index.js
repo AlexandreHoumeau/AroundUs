@@ -36,7 +36,7 @@ const ListMetro = () => {
             }} >
               <p style={{color: 'white', fontSize: '32px', textAlign: 'center'}}>{l.name}</p>
             </PreviewTitle>
-          <PreviewButton color={l.color}>C'est partis</PreviewButton>
+          <PreviewButton color={l.color}>C'est parti</PreviewButton>
         </PreviewCard>
       </PreviewCardContainer>
     ))}
