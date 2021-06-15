@@ -22,6 +22,9 @@ import heroScreenshotImageSrc from "images/demo/MainLandingPageHero.png";
 import logo from "images/logo.svg";
 import useInView from "@owaiswiz/use-in-view";
 
+import { io } from "socket.io-client";
+
+
 /* Hero */
 const Row = tw.div`flex`;
 const NavRow = tw(Row)`flex flex-col lg:flex-row items-center justify-between`;
@@ -269,6 +272,11 @@ const Block = ({ notifyIsVisible, components }) => {
 
   useEffect(() => {
     if (inView) notifyIsVisible();
+    const socket = io("https://murmuring-island-40619.herokuapp.com/", { transport : ['websocket'] });
+    socket.on("message", (arg) => {
+      console.log(arg)
+    });
+    
   }, [inView, notifyIsVisible]);
 
   const ResizeHandle = (
