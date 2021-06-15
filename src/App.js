@@ -80,7 +80,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 // import Footer from "components/footers/FiveColumnWithInputForm.js";
 // import Footer from "components/footers/FiveColumnWithBackground.js";
 // import Footer from "components/footers/FiveColumnDark.js";
-// import Footer from "components/footers/MiniCenteredFooter.js";
+import Footer from "components/footers/MiniCenteredFooter.js";
 
 /* Ready Made Pages (from demos folder) */
 // import EventLandingPage from "demos/EventLandingPage.js";
@@ -115,17 +115,9 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/components/:type/:subtype/:name">
-          <ComponentRenderer />
-        </Route>
-        <Route path="/components/:type/:name">
-          <ComponentRenderer />
-        </Route>
-        <Route path="/thank-you">
-          <ThankYouPage />
-        </Route>
         <Route path="/">
           <MainLandingPage />
+          <Footer />
         </Route>
       </Switch>
     </Router>
