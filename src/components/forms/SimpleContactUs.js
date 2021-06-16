@@ -50,8 +50,6 @@ const handleChange = (e) => {
   setFields({...fields, [e.target.name]: e.target.value});
 }
 
-
-
 const sendFeedback = (templateId, variables)  => {
 	send(
   	'service_rcx1oq7', templateId,

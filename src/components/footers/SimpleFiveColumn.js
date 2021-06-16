@@ -40,8 +40,8 @@ export default () => {
       <FiveColumns>
         <WideColumn>
           <LogoContainer>
-            <LogoImg src={LogoImage} />
-            <LogoText>Treact Inc.</LogoText>
+            <LogoImg  src={LogoImage} />
+            <LogoText>Meetro Chat</LogoText>
           </LogoContainer>
           <CompanyDescription>
             Treact is an Internet Technology company providing design resources such as website templates and themes.
