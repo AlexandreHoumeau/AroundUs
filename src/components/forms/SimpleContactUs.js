@@ -55,7 +55,12 @@ const sendFeedback = (templateId, variables)  => {
   	'service_rcx1oq7', templateId,
   	variables
   	).then(res => {
-    	console.log('Email envoyé avec succès');
+    	alert('Email envoyé avec succès');
+      setFields({
+        name: '',
+        email: "",
+        message: ""
+      })
   	})
   	// Handle errors here however you like, or use a React error boundary
   	.catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
@@ -77,17 +82,17 @@ const sendFeedback = (templateId, variables)  => {
                 <Column>
                   <InputContainer>
                     <Label htmlFor="name-input">Nom *</Label>
-                    <Input onChange={handleChange} required id="name-input" type="text" name="name" placeholder="John Doe" />
+                    <Input onChange={handleChange} value={fields.name} required id="name-input" type="text" name="name" placeholder="John Doe" />
                   </InputContainer>
                   <InputContainer>
                     <Label htmlFor="email-input">Adresse email *</Label>
-                    <Input onChange={handleChange} required id="email-input" type="email" name="email" placeholder="john@mail.com" />
+                    <Input onChange={handleChange} value={fields.email} required id="email-input" type="email" name="email" placeholder="john@mail.com" />
                   </InputContainer>
                 </Column>
                 <Column>
                   <InputContainer tw="flex-1">
                     <Label htmlFor="name-input">Message *</Label>
-                    <TextArea onChange={handleChange} required id="message-input" name="message" placeholder="Message"/>
+                    <TextArea onChange={handleChange} value={fields.message} required id="message-input" name="message" placeholder="Message"/>
                   </InputContainer>
                 </Column>
               </TwoColumn>
