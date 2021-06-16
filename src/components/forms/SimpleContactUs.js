@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import {ReactComponent as SvgDotPatternIcon} from "../../images/dot-pattern.svg"
+import{ init, send } from 'emailjs-com';
+init("user_NZEDOgb3a455bJ8JPxZCn");
+const templateId = 'template_3002e6j';
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -35,33 +38,66 @@ const SubmitButton = tw.button`w-full sm:w-32 mt-6 py-3 bg-gray-100 text-primary
 const SvgDotPattern1 = tw(SvgDotPatternIcon)`absolute bottom-0 right-0 transform translate-y-1/2 translate-x-1/2 -z-10 opacity-50 text-primary-500 fill-current w-24`
 
 export default () => {
+
+const [fields, setFields] = useState({
+  name: '',
+  email: "",
+  message: ""
+});
+
+
+const handleChange = (e) => {
+  setFields({...fields, [e.target.name]: e.target.value});
+}
+
+
+
+const sendFeedback = (templateId, variables)  => {
+	send(
+  	'service_rcx1oq7', templateId,
+  	variables
+  	).then(res => {
+    	console.log('Email envoyé avec succès');
+  	})
+  	// Handle errors here however you like, or use a React error boundary
+  	.catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+  }
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    sendFeedback(templateId, {message: fields.message, name: fields.name, reply_to: fields.email});
+  }
   return (
-    <Container>
+    <Container id="contact">
       <Content>
         <FormContainer>
           <div tw="mx-auto max-w-4xl">
-            <h2>Organize an Event</h2>
-            <form action="#">
+            <h2>Une question ? Contacte-nous</h2>
+            <form action="#" onSubmit={handleSubmit}>
               <TwoColumn>
                 <Column>
                   <InputContainer>
-                    <Label htmlFor="name-input">Your Name</Label>
-                    <Input id="name-input" type="text" name="name" placeholder="E.g. John Doe" />
+                    <Label htmlFor="name-input">Nom *</Label>
+                    <Input onChange={handleChange} required id="name-input" type="text" name="name" placeholder="John Doe" />
                   </InputContainer>
                   <InputContainer>
-                    <Label htmlFor="email-input">Your Email Address</Label>
-                    <Input id="email-input" type="email" name="email" placeholder="E.g. john@mail.com" />
+                    <Label htmlFor="email-input">Adresse email *</Label>
+                    <Input onChange={handleChange} required id="email-input" type="email" name="email" placeholder="john@mail.com" />
                   </InputContainer>
                 </Column>
                 <Column>
                   <InputContainer tw="flex-1">
-                    <Label htmlFor="name-input">Your Message</Label>
-                    <TextArea id="message-input" name="message" placeholder="E.g. Details about your event"/>
+                    <Label htmlFor="name-input">Message *</Label>
+                    <TextArea onChange={handleChange} required id="message-input" name="message" placeholder="Message"/>
                   </InputContainer>
                 </Column>
               </TwoColumn>
 
-              <SubmitButton type="submit" value="Submit">Submit</SubmitButton>
+              <div style={{textAlign: 'right'}}>
+                <SubmitButton type="submit" value="Submit">Envoyez</SubmitButton>
+              </div>
+
             </form>
           </div>
           <SvgDotPattern1 />

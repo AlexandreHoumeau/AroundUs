@@ -78,7 +78,7 @@ export default ({
             </LogoLink>
             <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
               <div tw="md:hidden flex-100 h-0"></div>
-              <PrimaryNavLink target="#contact" href="https://gum.co/QaruQ">
+              <PrimaryNavLink  href="#contact">
                 Nous Contactez
               </PrimaryNavLink>
             </div>

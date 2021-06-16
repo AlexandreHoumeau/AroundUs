@@ -68,7 +68,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 // import FAQ from "components/faqs/SingleCol.js";
 // import FAQ from "components/faqs/TwoColumnPrimaryBackground.js";
 
-// import ContactUsForm from "components/forms/SimpleContactUs.js";
+ import ContactUsForm from "components/forms/SimpleContactUs.js";
 // import ContactUsForm from "components/forms/TwoColContactUsWithIllustration.js";
 // import SubscribeNewsLetterForm from "components/forms/SimpleSubscribeNewsletter.js";
 //
@@ -117,6 +117,7 @@ export default function App() {
       <Switch>
         <Route path="/">
           <MainLandingPage />
+          <ContactUsForm />
           <Footer />
         </Route>
       </Switch>
