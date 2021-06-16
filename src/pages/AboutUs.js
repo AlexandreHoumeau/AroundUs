@@ -17,7 +17,7 @@ import ShieldIconImage from "images/shield-icon.svg";
 import CustomerLoveIconImage from "images/simple-icon.svg";
 
 const Subheading = tw.span`uppercase tracking-wider text-sm`;
-export default () => {
+const Mentions =  () => {
   return (
     <AnimationRevealPage>
       <Header />
@@ -66,3 +66,5 @@ export default () => {
     </AnimationRevealPage>
   );
 };
+
+export default Mentions

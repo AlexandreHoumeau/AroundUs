@@ -104,6 +104,7 @@ import Footer from "components/footers/MiniCenteredFooter.js";
 import ComponentRenderer from "ComponentRenderer.js";
 import MainLandingPage from "MainLandingPage.js";
 import ThankYouPage from "ThankYouPage.js";
+import MainMentions from "pages/PrivacyPolicy";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -115,12 +116,13 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact render={(props) => <MainMentions {...props} />} path="/mentions-legales" />
+        <Route exact path="/">
           <MainLandingPage />
           <ContactUsForm />
-          <Footer />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

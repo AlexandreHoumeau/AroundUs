@@ -9,7 +9,7 @@ import { SectionHeading as HeadingBase } from "components/misc/Headings";
 import { SectionDescription as DescriptionBase } from "components/misc/Typography";
 
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
-import heroScreenshotImageSrc from "images/demo/MainLandingPageHero.png";
+import heroScreenshotImageSrc from "images/homeMeetroChat.png";
 import logoFull from "images/logo-full.png";
 
 import ListMetroView from './components/listMetro'
@@ -21,7 +21,7 @@ const NavLink = tw.a`mt-4 lg:mt-0 transition duration-300 font-medium pb-1 borde
 const PrimaryNavLink = tw(
   NavLink
 )`text-gray-100 bg-primary-500 px-6 py-3 border-none rounded hocus:bg-primary-900 focus:shadow-outline mt-6 md:mt-4 lg:mt-0`;
-const HeroRow = tw(Row)`flex-col lg:flex-row justify-between items-center pt-4 lg:pt-12 pb-16 max-w-screen-2xl mx-auto flex-wrap mt-10`;
+const HeroRow = tw(Row)`flex-col lg:flex-row justify-between items-center pt-4 lg:pt-8 pb-16 max-w-screen-2xl mx-auto flex-wrap mt-10`;
 
 const Column = tw.div`flex-1`;
 const TextColumn = tw(Column)`mx-auto lg:mr-0 max-w-2xl lg:max-w-xl xl:max-w-2xl flex-shrink-0`;

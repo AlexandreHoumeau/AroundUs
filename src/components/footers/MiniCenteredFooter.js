@@ -6,6 +6,7 @@ import logoFull from "../../images/logo-full.png";
 import { ReactComponent as FacebookIcon } from "../../images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "../../images/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "../../images/youtube-icon.svg";
+import { NavLink } from "react-router-dom";
 
 
 const Container = tw(ContainerBase)`bg-gray-900 text-gray-100 -mx-8 -mb-8`
@@ -38,8 +39,8 @@ export default () => {
             <LogoImg src={logoFull} />
           </LogoContainer>
           <LinksContainer>
-            <Link href="#home">Accueil</Link>
-            <Link href="#help">Comment ça marche</Link>
+            <NavLink style={{marginRight: "14px"}} to="/">Accueil</NavLink>
+            <NavLink to="/mentions-legales">Mentions Légales</NavLink>
             <Link href="#contact">Contact</Link>
           </LinksContainer>
           <SocialLinksContainer>
@@ -54,7 +55,7 @@ export default () => {
             </SocialLink>
           </SocialLinksContainer>
           <CopyrightText>
-            &copy; Copyright 2020, Meetro Chat Inc. All Rights Reserved.
+            &copy; 2021, Meetro Chat Inc. Tous les droits sont réservés.
           </CopyrightText>
         </Row>
       </Content>

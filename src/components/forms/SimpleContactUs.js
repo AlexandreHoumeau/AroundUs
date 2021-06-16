@@ -76,7 +76,7 @@ const sendFeedback = (templateId, variables)  => {
       <Content>
         <FormContainer>
           <div tw="mx-auto max-w-4xl">
-            <h2>Une question ? Contacte-nous</h2>
+            <h2>Une question ? Contactez-nous</h2>
             <form action="#" onSubmit={handleSubmit}>
               <TwoColumn>
                 <Column>
