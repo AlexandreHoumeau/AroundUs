@@ -10,7 +10,7 @@ import { SectionDescription as DescriptionBase } from "components/misc/Typograph
 
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 import heroScreenshotImageSrc from "images/demo/MainLandingPageHero.png";
-import logo from "images/logo.svg";
+import logoFull from "images/logo-full.png";
 
 import ListMetroView from './components/listMetro'
 
@@ -73,13 +73,12 @@ export default ({
         <Content2Xl>
           <NavRow>
             <LogoLink href="/">
-              <img src={logo} alt="" />
-              Meetro Chat
+              <img src={logoFull} alt="" />
             </LogoLink>
             <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
               <div tw="md:hidden flex-100 h-0"></div>
               <PrimaryNavLink target="#contact" href="https://gum.co/QaruQ">
-                Nous Contactez
+                Nous Contacter
               </PrimaryNavLink>
             </div>
           </NavRow>
