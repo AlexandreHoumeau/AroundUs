@@ -78,7 +78,7 @@ export default ({
             <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
               <div tw="md:hidden flex-100 h-0"></div>
               <PrimaryNavLink  href="#contact">
-                Nous Contactez
+                Nous Contacter
               </PrimaryNavLink>
             </div>
           </NavRow>

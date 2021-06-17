@@ -98,7 +98,7 @@ const sendFeedback = (templateId, variables)  => {
               </TwoColumn>
 
               <div style={{textAlign: 'right'}}>
-                <SubmitButton type="submit" value="Submit">Envoyez</SubmitButton>
+                <SubmitButton type="submit" value="Submit">Envoyer</SubmitButton>
               </div>
 
             </form>
